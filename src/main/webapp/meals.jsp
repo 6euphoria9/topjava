@@ -1,5 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <%@ page import="java.time.format.DateTimeFormatter" %>
 
 <html>
@@ -28,9 +28,13 @@
             <td>${meal.description}</td>
             <td>${meal.calories}</td>
             <td>${meal.excess}</td>
+            <td><a href="meals?action=edit&mealId=${meal.mealId}">Update</a></td>
+            <td><a href="meals?action=delete&mealId=${meal.mealId}">Delete</a></td>
         </tr>
 
     </c:forEach>
 </table>
+
+<p><a href="meals?action=insert">Add User</a></p>
 </body>
 </html>
